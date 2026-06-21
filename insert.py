@@ -7,13 +7,14 @@ cursor = conn.cursor()
 
 try:
     while True:
-        query = "INSERT INTO std (name, age, class, email) VALUES (%s, %s, %s, %s)"
+        query = "INSERT INTO std (name, age, class, email, grade) VALUES (%s, %s, %s, %s, %s)"
         name = input("Enter name: ")
         age = input("Enter age: ")
         dept = input("Enter department: ")
         email = input("Enter email: ")
+        grade = input("Enter grade: ")
 
-        values = (name, age, dept, email)
+        values = (name, age, dept, email, grade)
 
         cursor.execute(query, values)
 
