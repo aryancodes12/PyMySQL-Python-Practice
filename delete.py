@@ -14,9 +14,12 @@ def delete_std(std_id: int)-> bool:
 
         student = cursor.fetchone()
 
+       
         if not student:
             print(f"No student with id {std_id}")
             return False
+        
+        print(f"Student's name with id {std_id} is {student['name']}")
         
         cursor.execute(
             "DELETE FROM std WHERE id = %s",
@@ -29,5 +32,4 @@ def delete_std(std_id: int)-> bool:
         if cursor: cursor.close()
         if conn: conn.close()
 
-delete_std(5)
-delete_std(9)
+delete_std(1)
